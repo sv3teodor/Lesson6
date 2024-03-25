@@ -25,8 +25,8 @@ public class Lesson5Tests extends BaseTest {
         checkBoxes.get(1).click();
         Assertions.assertTrue(checkBoxes.get(0).isSelected());
         Assertions.assertFalse(checkBoxes.get(1).isSelected());
-        System.out.println("CheckBox 1" + checkBoxes.get(0).isSelected());
-        System.out.println("CheckBox 0" + checkBoxes.get(1).isSelected());
+        System.out.println("CheckBox 1=" + checkBoxes.get(0).getAttribute("checked"));
+        System.out.println("CheckBox 0=" + checkBoxes.get(1).getAttribute("checked"));
     }
 
     /*
