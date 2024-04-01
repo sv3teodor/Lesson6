@@ -25,7 +25,7 @@ import static org.junit.jupiter.api.DynamicTest.dynamicTest;
 import static org.openqa.selenium.By.linkText;
 import static utils.Utils.getSpecialCharacters;
 
-public class Lesson6Selenide {
+public class LessonSixSelenide {
     @Epic("Tests for lesson 6")
 
     @BeforeAll
@@ -125,7 +125,7 @@ public class Lesson6Selenide {
                 "-1",
                 "0",
                 "10001"
-        ).map(number -> dynamicTest(String.format("Проверка ввода числа %d",number), () -> {
+        ).map(number -> dynamicTest(String.format("Проверка ввода числа %s",number), () -> {
             open("https://the-internet.herokuapp.com/");
             $(linkText("Inputs")).click();
             SelenideElement input = $(By.tagName("input"));
@@ -142,7 +142,7 @@ public class Lesson6Selenide {
             Я решил для разнообразия разнести.
          */
         List<DynamicTest> result = new ArrayList<>();
-        // Передаем 3 знаяения. Название теста, что будет введено, что ожидаем в поле.
+        // Передаем 3 значения. Название теста, что будет введено, что ожидаем в поле.
         List<Triple<String, String, String>> collection = new ArrayList<>();
         collection.add(Triple.of("Тест ввода пустой строки", "", ""));
         collection.add(Triple.of("Тест ввода латинских букв", "abcd", ""));
@@ -201,7 +201,6 @@ public class Lesson6Selenide {
     @RepeatedTest(10)
     public void notificationMessageTest() {
         $(linkText("Notification Messages")).click();
-        boolean successMessageDisplayed = false;
         Selenide.webdriver().object().manage().window().maximize();//Иначе ссылка на github перекрывает крестик
         $(linkText("Click here")).click();
         $(By.id("flash")).shouldHave(text("successful"), Duration.ofMillis(1000));
@@ -223,7 +222,7 @@ public class Lesson6Selenide {
     public List<DynamicTest> addRemoveTest() {
 
         List<DynamicTest> result = new ArrayList<>();
-        // Передаем 3 знаяения. Название теста, что будет введено, что ожидаем в поле.
+        // Передаем 3 значения. Название теста, что будет введено, что ожидаем в поле.
         List<Pair<Integer, Integer>> collection = new ArrayList<>();
         collection.add(Pair.of(2, 1));
         collection.add(Pair.of(5, 2));
