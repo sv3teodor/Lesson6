@@ -40,3 +40,4 @@ allure-results/build/
 /allure-results/
 /.allure/
 /allure-report/
+/build/
