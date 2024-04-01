@@ -27,7 +27,7 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
+allure-results/build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
@@ -39,3 +39,4 @@ build/
 /.idea/
 /allure-results/
 /.allure/
+/allure-report/
